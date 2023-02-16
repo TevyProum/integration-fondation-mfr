@@ -1,0 +1,71 @@
+#quisommesnous {
+    margin: 24px auto 48px auto;
+    padding-top: 24px;
+
+    @media #{$min-tablet} {
+        margin: 48px auto 96px auto;
+        padding-top: 48px;
+    }
+}
+
+.block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__left {
+        flex-basis: 100%;
+        margin-bottom: 40px;
+
+        @media #{$min-tablet} {
+            flex-basis: 45%;
+            margin-bottom: 0px;
+        }
+    }
+    
+    &__right {
+        flex-basis: 100%;
+        margin: 0px;
+
+        @media #{$min-tablet} {
+            flex-basis: 50%;
+            margin: 40px 0px 0px 0px;
+        }
+    }
+
+    p {
+        margin: 32px 0px;
+        padding-right: 50px;
+
+        @media #{$max-tablet} {
+            padding-right: 0px;
+        }
+    }
+
+    .bold {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 150%;
+    }
+
+    ul {
+        list-style: disc;
+        padding-left: 20px;
+    }
+}
+
+.blockImage {
+    align-items: center;
+
+    h2 {
+        margin-top: 0px;
+    }
+
+    .block__right {
+        margin: 0px;
+
+        img {
+            border-radius: 8px;
+        }
+    }
+}

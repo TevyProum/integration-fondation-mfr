@@ -1,0 +1,94 @@
+.btn {
+    background: #EEF4F3;
+    border: 1px solid $color-green;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 16px;
+    text-decoration: none;
+    width: max-content;
+    min-height: 50px;
+    pointer-events: auto;
+	cursor: pointer;
+	position: relative;
+    overflow: hidden;
+
+    @media (min-width: 1070px) and (max-width: 1200px) {
+        font-size: 13px;
+    }
+
+    span {
+        position: relative;
+    }
+
+    &::after {
+        position: absolute;
+        top: 0;
+        height: 100%;
+    }
+
+    &::before {
+        @extend .btn::after;
+        content: '';
+        background: $color-white;
+        color: $color-black;
+        width: 120%;
+        left: -10%;
+        transform: skew(30deg);
+        transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    }
+
+    &:hover::before {
+        transform: translate3d(100%,0,0);
+    }
+}
+
+.-green {
+    background: $color-lightgreen;
+    color: $color-white;
+    display: flex;
+    align-items: center;
+    padding: 9px 16px;
+    border: none;
+
+    &::before {
+        background: $color-green;
+        color: $color-white;
+    }
+}
+
+.-yellow {
+    @extend .-green;
+    background: $color-lightyellow;
+    color: $color-black;
+
+    &::before {
+        background: $color-yellow;
+        color: $color-black;
+    }
+}
+
+.-donation::after {
+    content: url('../images/se_soucier.svg');
+    margin-left: 14px;
+    position: relative;
+    background: none;
+}
+
+.-donationB::after {
+    @extend .-donation;
+    filter: invert(1);
+}
+
+.btnGroup {
+    display: flex;
+    justify-content: center;
+    column-gap: 24px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+
+    @media (min-width: 1070px) and (max-width: 1200px) {
+        column-gap: 12px;
+    }
+}

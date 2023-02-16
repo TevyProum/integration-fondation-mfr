@@ -1,0 +1,24 @@
+.hero {
+    background: url('../images/hero.jpg');
+    color: $color-white;
+    margin-top: -123px;
+    height: 650px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    .btn {
+        margin: auto;
+    }
+
+    .-small {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin: 80px auto 0px auto;
+       
+        @media (min-width: 1070px) {
+            margin: 40px auto 0px auto;
+        }
+    }
+}

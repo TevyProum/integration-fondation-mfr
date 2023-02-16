@@ -1,0 +1,142 @@
+#dons {
+    margin: 48px auto;
+    overflow: hidden;
+
+    @media (min-width: 1123px) {
+        display: flex;
+        margin: 0px auto 96px auto;
+        padding-top: 48px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .donationText {
+        margin: 40px 0px;
+        z-index: 2;
+        background: white;
+
+        @media (min-width: 1123px) {
+            margin: 0px;
+            flex-basis: 48%;
+            padding-right: 20px;
+        }
+
+        p {
+            margin: 32px 0px;
+            padding-right: 50px;
+
+            @media (max-width: 1122px) {
+                padding-right: 0px;
+            }
+        }
+
+        .bold {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 150%;
+        }
+    }
+
+    .donationCarousel {
+        @media (min-width: 1123px) {
+            flex-basis: 45%;
+            max-width: 50%;
+        }
+
+        legend {
+            font-size: 14px;
+            line-height: 30px;
+        }
+
+        img {
+            max-height: 323px;
+            object-fit: cover;
+            border-radius: 8px;
+
+            @media (min-width: 481px) and (max-width: 1123px) {
+                max-height: 466px;
+            }
+
+            @media (min-width: 1123px) {
+                max-height: 466px;
+                max-width: 450px;
+                opacity: 0.5;
+            }
+        }
+
+        .active img {
+            opacity: 1;
+        }
+
+        .owl-stage-outer {
+            @media (min-width: 1123px) {
+                overflow: visible;
+            }
+        }
+
+        .owl-nav {
+            position: absolute;
+            bottom: 12%;
+            right: 5%;
+
+            @media (min-width: 1123px) {
+                max-height: 466px;
+                bottom: 45%;
+                right: 0%;
+                display: flex;
+                justify-content: space-between;
+                width: calc(100% - 60px);
+                right: 14%;
+            }
+
+            .owl-prev {
+                width: 40px;
+                height: 40px;
+                background: $color-lightgreen;
+                border-radius: 8px;
+                pointer-events: auto;
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+    
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    height: 100%;
+                }
+            
+                &::before {
+                    @extend .btn::after;
+                    content: '';
+                    background: $color-green;
+                    color: $color-black;
+                    width: 160%;
+                    left: -30%;
+                    transform: skew(30deg);
+                    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+                }
+            
+                &:hover::before {
+                    transform: translate3d(100%,0,0);
+                }
+    
+                .prev-slide {
+                    content: url('../images/dons_prev_arrow.svg');
+                    margin: auto;
+                    position: relative;
+                }
+            }
+    
+            .owl-next {
+                @extend .owl-prev;
+                margin-left: 16px;
+        
+                .next-slide {
+                    content: url('../images/dons_next_arrow.svg');
+                    margin: auto;
+                    position: relative;
+                }
+            }
+        }
+    }
+}
